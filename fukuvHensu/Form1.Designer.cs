@@ -101,6 +101,7 @@ namespace fukuvHensu
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
+            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
@@ -109,6 +110,7 @@ namespace fukuvHensu
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "0";
+            this.textBox2.Visible = false;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Form1
