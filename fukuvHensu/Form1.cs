@@ -12,9 +12,9 @@ namespace fukuvHensu
 {
     public partial class Form1 : Form
     {
-        int vx;
-        int vy;
-        int speed;
+        int vx =-10;
+        int vy=-10;
+       
 
 
         public Form1()
@@ -32,8 +32,31 @@ namespace fukuvHensu
         {
 
 
-            label1.Left += vx*speed;
-            label1.Top += vy*speed;
+            label1.Left += vx;
+            label1.Top += vy;
+
+            vx = Math.Abs(vx);
+
+            if (label1.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            
+            if (label1.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+
+            if (label1.Left+label1.Width < ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+
+            if (label1.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -74,6 +97,12 @@ namespace fukuvHensu
         private void button5_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("幅" + ClientSize.Width);
+           //MessageBox.Show("高さ" + ClientSize.Height);
         }
     }
 }
